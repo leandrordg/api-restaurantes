@@ -82,6 +82,7 @@ export async function userRoute(app: FastifyInstanceWithZod) {
         nome,
         email,
         senha: hashedPassword,
+        role: "administrador"
       });
 
       return reply.status(201).send({ message: "Usuário criado com sucesso." });

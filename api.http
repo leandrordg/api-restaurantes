@@ -3,16 +3,45 @@ POST http://localhost:3333/usuarios/registrar
 Content-Type: application/json
 
 {
-    "nome": "Leandro",
+    "nome": "Teste",
     "email": "teste@exemplo.com",
     "senha": "12345678"
 }
 
 ###
 POST http://localhost:3333/usuarios/login
-Content-Type: application/json
+Content-Type: application/json 
 
 {
     "email": "teste@exemplo.com",
     "senha": "12345678"
 }
+
+###
+GET http://localhost:3333/mesas
+
+###
+POST http://localhost:3333/mesas
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyYzkzYWZkMy0xN2I5LTQ5NjYtYWRlZS1mZDVmMWE5ZGIyYjIiLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzYzODQ2LCJleHAiOjE3NDA3Njc0NDZ9.EWaB1yyY-CYbNM9lryubV37dcqV0kPCDA1MBrmj-cgU
+
+{
+    "nome": "Mesa 3",
+    "capacidade": 4,
+    "status": "inativa"
+}
+
+###
+PATCH http://localhost:3333/mesas/47f740c1-1fa0-42be-b295-65996bd6a04b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyYzkzYWZkMy0xN2I5LTQ5NjYtYWRlZS1mZDVmMWE5ZGIyYjIiLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzYzODQ2LCJleHAiOjE3NDA3Njc0NDZ9.EWaB1yyY-CYbNM9lryubV37dcqV0kPCDA1MBrmj-cgU
+
+{
+    "nome": "Mesa 5",
+    "capacidade": 8,
+    "status": "disponivel"
+}
+
+###
+DELETE http://localhost:3333/mesas/f97a454a-e333-4502-bdd4-09a713508da2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyYzkzYWZkMy0xN2I5LTQ5NjYtYWRlZS1mZDVmMWE5ZGIyYjIiLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzYzODQ2LCJleHAiOjE3NDA3Njc0NDZ9.EWaB1yyY-CYbNM9lryubV37dcqV0kPCDA1MBrmj-cgU

@@ -1,3 +1,4 @@
+import { integer } from "drizzle-orm/pg-core";
 import { pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 
 export const users = pgTable("users", {
@@ -12,7 +13,7 @@ export const users = pgTable("users", {
 export const tables = pgTable("tables", {
   id: uuid("id").primaryKey().defaultRandom(),
   nome: text("nome").notNull(),
-  capacidade: text("capacidade").notNull(),
+  capacidade: integer("capacidade").notNull(),
   status: text("status").default("disponivel"),
   created_at: timestamp("created_at").defaultNow(),
 });
