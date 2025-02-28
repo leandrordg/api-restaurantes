@@ -13,8 +13,9 @@ import {
 } from "fastify-type-provider-zod";
 
 import { env } from "./env";
-import { tableRoute } from "./routes/tables-routes";
+import { tableRoute } from "./routes/table-route";
 import { userRoute } from "./routes/user-route";
+import { reservationRoute } from "./routes/reservation-route";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -27,8 +28,8 @@ app.register(fastifyJwt, { secret: env.JWT_SECRET });
 app.register(fastifySwagger, {
   openapi: {
     info: {
-      title: "API de reservas de restaurante",
-      description: "Uma API para gerenciar reservas de restaurante",
+      title: "API - Plataforma de Reservas",
+      description: "Uma API para gerenciamento de mesas e reservas para restaurantes.",
       version: "1.0.0",
     },
   },
@@ -37,6 +38,7 @@ app.register(fastifySwagger, {
 
 app.register(userRoute, { prefix: "/usuarios" });
 app.register(tableRoute, { prefix: "/mesas" });
+app.register(reservationRoute, { prefix: "/reservas" });
 app.register(fastifySwaggerUi, { routePrefix: "/docs" });
 
 app.listen({ port: env.PORT }).then(() => {

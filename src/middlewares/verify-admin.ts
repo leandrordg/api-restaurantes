@@ -2,6 +2,7 @@ import { FastifyReply, FastifyRequest } from "fastify";
 import jwt from "jsonwebtoken";
 
 import { env } from "../env";
+import { JWTSession } from "../types";
 
 export async function verifyAdmin(
   request: FastifyRequest,
@@ -14,11 +15,7 @@ export async function verifyAdmin(
   }
 
   try {
-    const decoded = jwt.verify(token, env.JWT_SECRET) as {
-      userId: string;
-      email: string;
-      role: string;
-    };
+    const decoded = jwt.verify(token, env.JWT_SECRET) as JWTSession;
 
     if (decoded.role !== "administrador") {
       return reply

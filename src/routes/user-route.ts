@@ -41,7 +41,12 @@ export async function userRoute(app: FastifyInstanceWithZod) {
       }
 
       const token = jwt.sign(
-        { userId: user.id, email: user.email, role: user.role },
+        {
+          usuario_id: user.id,
+          nome: user.nome,
+          email: user.email,
+          role: user.role,
+        },
         env.JWT_SECRET,
         { expiresIn: "1h" }
       );
@@ -82,7 +87,6 @@ export async function userRoute(app: FastifyInstanceWithZod) {
         nome,
         email,
         senha: hashedPassword,
-        role: "administrador"
       });
 
       return reply.status(201).send({ message: "Usuário criado com sucesso." });

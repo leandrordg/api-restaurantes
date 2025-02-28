@@ -14,3 +14,10 @@ export type FastifyInstanceWithZod = FastifyInstance<
   FastifyBaseLogger,
   ZodTypeProvider
 >;
+
+export type JWTSession = {
+  usuario_id: string;
+  nome: string;
+  email: string;
+  role: "cliente" | "administrador";
+};

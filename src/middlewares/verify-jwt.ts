@@ -2,6 +2,7 @@ import { FastifyReply, FastifyRequest } from "fastify";
 import jwt from "jsonwebtoken";
 
 import { env } from "../env";
+import { JWTSession } from "../types";
 
 export async function verifyJwt(request: FastifyRequest, reply: FastifyReply) {
   const token = request.headers.authorization?.split(" ")[1];
@@ -11,14 +12,11 @@ export async function verifyJwt(request: FastifyRequest, reply: FastifyReply) {
   }
 
   try {
-    const decoded = jwt.verify(token, env.JWT_SECRET) as {
-      userId: string;
-      email: string;
-      role: string;
-    };
+    const decoded = jwt.verify(token, env.JWT_SECRET) as JWTSession;
 
     request.user = {
-      userId: decoded.userId,
+      usuario_id: decoded.usuario_id,
+      nome: decoded.nome,
       email: decoded.email,
       role: decoded.role,
     };

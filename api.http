@@ -3,7 +3,7 @@ POST http://localhost:3333/usuarios/registrar
 Content-Type: application/json
 
 {
-    "nome": "Teste",
+    "nome": "John Doe",
     "email": "teste@exemplo.com",
     "senha": "12345678"
 }
@@ -23,25 +23,44 @@ GET http://localhost:3333/mesas
 ###
 POST http://localhost:3333/mesas
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyYzkzYWZkMy0xN2I5LTQ5NjYtYWRlZS1mZDVmMWE5ZGIyYjIiLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzYzODQ2LCJleHAiOjE3NDA3Njc0NDZ9.EWaB1yyY-CYbNM9lryubV37dcqV0kPCDA1MBrmj-cgU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiM2VmNDA3N2ItYzJlNC00MzdmLWI2ZmYtOGNiNGFiYTU4ODdmIiwibm9tZSI6IkxlYW5kcm8iLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzgxNzEwLCJleHAiOjE3NDA3ODUzMTB9.QDs_eXFZ4IDP4glFmw5vJNF8dX6vA49vi9v2kUchKFE
 
 {
-    "nome": "Mesa 3",
-    "capacidade": 4,
-    "status": "inativa"
-}
-
-###
-PATCH http://localhost:3333/mesas/47f740c1-1fa0-42be-b295-65996bd6a04b
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyYzkzYWZkMy0xN2I5LTQ5NjYtYWRlZS1mZDVmMWE5ZGIyYjIiLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzYzODQ2LCJleHAiOjE3NDA3Njc0NDZ9.EWaB1yyY-CYbNM9lryubV37dcqV0kPCDA1MBrmj-cgU
-
-{
-    "nome": "Mesa 5",
-    "capacidade": 8,
+    "nome": "Mesa 1",
+    "capacidade": 6,
     "status": "disponivel"
 }
 
 ###
-DELETE http://localhost:3333/mesas/f97a454a-e333-4502-bdd4-09a713508da2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyYzkzYWZkMy0xN2I5LTQ5NjYtYWRlZS1mZDVmMWE5ZGIyYjIiLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzYzODQ2LCJleHAiOjE3NDA3Njc0NDZ9.EWaB1yyY-CYbNM9lryubV37dcqV0kPCDA1MBrmj-cgU
+PATCH http://localhost:3333/mesas/5415e3db-5251-49f4-83a9-7c21bc90785a
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiM2VmNDA3N2ItYzJlNC00MzdmLWI2ZmYtOGNiNGFiYTU4ODdmIiwibm9tZSI6IkxlYW5kcm8iLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzgxNzEwLCJleHAiOjE3NDA3ODUzMTB9.QDs_eXFZ4IDP4glFmw5vJNF8dX6vA49vi9v2kUchKFE
+
+{
+    "nome": "Mesa 1",
+    "capacidade": 6,
+    "status": "disponivel"
+}
+
+###
+DELETE http://localhost:3333/mesas/d0884244-da9c-4125-b14a-60470bdb1c19
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiM2VmNDA3N2ItYzJlNC00MzdmLWI2ZmYtOGNiNGFiYTU4ODdmIiwibm9tZSI6IkxlYW5kcm8iLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzgxNzEwLCJleHAiOjE3NDA3ODUzMTB9.QDs_eXFZ4IDP4glFmw5vJNF8dX6vA49vi9v2kUchKFE
+
+###
+GET http://localhost:3333/reservas
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiM2VmNDA3N2ItYzJlNC00MzdmLWI2ZmYtOGNiNGFiYTU4ODdmIiwibm9tZSI6IkxlYW5kcm8iLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzgxNzEwLCJleHAiOjE3NDA3ODUzMTB9.QDs_eXFZ4IDP4glFmw5vJNF8dX6vA49vi9v2kUchKFE
+
+###
+POST http://localhost:3333/reservas
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiM2VmNDA3N2ItYzJlNC00MzdmLWI2ZmYtOGNiNGFiYTU4ODdmIiwibm9tZSI6IkxlYW5kcm8iLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzgxNzEwLCJleHAiOjE3NDA3ODUzMTB9.QDs_eXFZ4IDP4glFmw5vJNF8dX6vA49vi9v2kUchKFE
+
+{
+    "mesa_id": "c7a38af5-b078-4e06-b5be-09de1db5b49f",
+    "data_reserva": "2025-02-28T15:00:00.0Z",
+    "capacidade": 6
+}
+
+###
+PATCH http://localhost:3333/reservas/da8357cc-3082-4c63-8214-fb774c000166/cancelar
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiM2VmNDA3N2ItYzJlNC00MzdmLWI2ZmYtOGNiNGFiYTU4ODdmIiwibm9tZSI6IkxlYW5kcm8iLCJlbWFpbCI6ImxqMjUxMDA0QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwiaWF0IjoxNzQwNzgxNzEwLCJleHAiOjE3NDA3ODUzMTB9.QDs_eXFZ4IDP4glFmw5vJNF8dX6vA49vi9v2kUchKFE
