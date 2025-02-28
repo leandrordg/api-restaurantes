@@ -13,6 +13,7 @@ import {
 } from "fastify-type-provider-zod";
 
 import { env } from "./env";
+import { tableRoute } from "./routes/tables-routes";
 import { userRoute } from "./routes/user-route";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
@@ -34,7 +35,8 @@ app.register(fastifySwagger, {
   transform: jsonSchemaTransform,
 });
 
-app.register(userRoute, { prefix: "/api/users" });
+app.register(userRoute, { prefix: "/usuarios" });
+app.register(tableRoute, { prefix: "/mesas" });
 app.register(fastifySwaggerUi, { routePrefix: "/docs" });
 
 app.listen({ port: env.PORT }).then(() => {
