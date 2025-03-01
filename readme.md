@@ -3,6 +3,8 @@
 ## 📝 Sobre o Projeto
 A **API Restaurantes** é um sistema de gerenciamento de mesas e reservas para restaurantes. Permite que usuários façam cadastro, login, visualizem mesas disponíveis e realizem reservas. Administradores possuem permissões adicionais para gerenciar mesas e reservas, garantindo um controle eficiente do restaurante.
 
+🔗 **Documentação interativa da API:** [Swagger Docs](https://api-restaurantes.vercel.app/docs)
+
 ## 🚀 Tecnologias Utilizadas
 - **🦕 Linguagem:** TypeScript
 - **⚡ Framework:** Fastify
@@ -12,6 +14,7 @@ A **API Restaurantes** é um sistema de gerenciamento de mesas e reservas para r
 - **🛡️ Middlewares de Segurança:** verifyJWT e verifyAdmin
 - **🐘 Banco de Dados:** PostgreSQL
 - **📦 Containerização:** Docker
+- **📖 Documentação:** Swagger
 
 ---
 
@@ -120,6 +123,7 @@ As tecnologias foram escolhidas por sua eficiência e velocidade:
 - **Zod**: Validação segura de dados.
 - **JWT**: Autenticação baseada em tokens para maior segurança.
 - **Middlewares verifyJWT e verifyAdmin**: Utilizados como `[verifyJWT, verifyAdmin]` para proteger rotas administrativas.
+- **Swagger**: Documentação clara e acessível para facilitar o uso da API.
 
 ---
 
