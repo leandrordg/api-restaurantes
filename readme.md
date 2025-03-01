@@ -57,8 +57,8 @@ ALTER TABLE "reservations" ADD CONSTRAINT "reservations_mesa_id_tables_id_fk" FO
 - **`POST /usuarios/registrar`** - Registrar um novo usuário
 - **`POST /usuarios/login`** - Fazer login
 
-### 🍽️ Mesas *(Requer verifyJWT para acesso e [verifyJWT, verifyAdmin] para modificações)*
-- **`GET /mesas`** - Listar todas as mesas *(verifyJWT)*
+### 🍽️ Mesas *(Requer [verifyJWT, verifyAdmin] para modificações)*
+- **`GET /mesas`** - Listar todas as mesas
 - **`POST /mesas`** - Criar uma nova mesa *([verifyJWT, verifyAdmin])*
 - **`PATCH /mesas/:id`** - Atualizar uma mesa *([verifyJWT, verifyAdmin])*
 - **`DELETE /mesas/:id`** - Excluir uma mesa *([verifyJWT, verifyAdmin])*
